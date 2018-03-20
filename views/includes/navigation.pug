@@ -1,0 +1,20 @@
+aside
+    header
+      img(src="./images/logo.png")
+      h1 Amsterdam's Vault
+    nav#alphabeticalFilter
+      ul
+        each letter in ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+          li
+            a(href=`#${letter.toLowerCase()}`)=letter
+      form
+        input(type="search", placeholder="Search by streetname...")#search
+        i.fas.fa-search
+    section
+      ul#streetsOverview
+        each letter, index in data
+          li(id=index.toLowerCase())=index
+          each street, index in letter
+            li
+              a(href=`/?sn=${street.streetURLName}&id=${street.streetURLId}`)=index
+

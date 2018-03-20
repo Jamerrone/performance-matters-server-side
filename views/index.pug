@@ -1,0 +1,19 @@
+include includes/head.pug
+body
+  //- div#loader.show
+  //-   div
+  //-     img(src="./images/logo.png")
+  //-     h1 Amsterdam's Vault
+  dialog#dialog
+    img#lightboxImg
+    a(href="javascript:void(0);")#closeLightbox
+      i.fas.fa-times
+  include includes/navigation.pug
+  div#map
+  p#streetName
+  include includes/timeline.pug
+  script(src="https://use.fontawesome.com/releases/v5.0.8/js/all.js")
+  script(src="https://unpkg.com/terraformer@1.0.7/terraformer.js")
+  script(src="https://unpkg.com/terraformer-wkt-parser@1.1.2/terraformer-wkt-parser.js")
+  script(src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js")
+  script(src="./scripts/leaflet-providers.js")
