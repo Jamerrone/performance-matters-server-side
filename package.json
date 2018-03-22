@@ -14,6 +14,7 @@
     "babel-preset-env": "^1.6.1",
     "babelify": "^8.0.0",
     "browserify": "^16.1.1",
+    "compression": "^1.7.2",
     "express": "^4.16.3",
     "express-minify-html": "^0.12.0",
     "lazyload": "^2.0.0-beta.2",
