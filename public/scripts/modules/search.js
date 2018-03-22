@@ -1,11 +1,7 @@
 {
   let searchInputField
-  let sliderTimeoutHandler
   const alphabeticalFilter = document.getElementById('alphabeticalFilter')
-  const leftSliderControl = document.getElementById('left')
-  const rightSliderControl = document.getElementById('right')
   const streetsOverview = document.getElementById('streetsOverview')
-  const timeline = document.getElementById('timeline')
 
   const createSearchForm = () => {
     const form = document.createElement('form')
@@ -43,29 +39,10 @@
     })
   }
 
-  const scroll = val => {
-    sliderTimeoutHandler = setInterval(() => {
-      timeline.scrollLeft < timeline.scrollWidth
-        ? (timeline.scrollLeft += val)
-        : clearTimeout(sliderTimeoutHandler)
-    }, 0)
-  }
-
-  rightSliderControl.addEventListener('mouseover', () => scroll(1))
-  rightSliderControl.addEventListener('mouseleave', () =>
-    clearTimeout(sliderTimeoutHandler)
-  )
-
-  leftSliderControl.addEventListener('mouseover', e => scroll(-1))
-  leftSliderControl.addEventListener('mouseleave', e =>
-    clearTimeout(sliderTimeoutHandler)
-  )
-
   window.addEventListener('hashchange', () => clearSearch())
   alphabeticalFilter.querySelectorAll('li').forEach(li => {
     li.addEventListener('click', () => clearSearch())
   })
 
   createSearchForm()
-  lazyload()
 }
