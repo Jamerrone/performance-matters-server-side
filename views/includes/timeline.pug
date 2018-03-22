@@ -3,7 +3,7 @@ section#timeline
       each year, index in details
         div(class=index)
           each picture in year
-            img(src=picture.imgURL.value, title=picture.year.value, class='lazyload')
+            img(data-src=picture.imgURL.value, title=picture.year.value, class='lazyload')
     span#left
       i.fas.fa-chevron-left
     span#right
