@@ -1,9 +1,14 @@
 const sparql = require('./sparql')
 
 module.exports.firstRequest = async (req, res) => {
-  const data = await sparql.fetchStreetNames()
-  if (req.query.sn && req.query.id) {
-    console.log(`SN: ${req.query.sn} ID:${req.query.id}`)
-  }
-  res.render('index', { data: data })
+  const data = {}
+  data.streets = await sparql.fetchStreetNames()
+  req.query.sn = req.query.sn || 'aagtdorperpad'
+  req.query.id = req.query.id || '5'
+  data.details = await sparql.fetchStreetDetails(req.query.sn, req.query.id)
+  res.render('index', {
+    streets: data.streets,
+    details: data.details,
+    streetName: Object.values(data.details)[0][0].streetName.value
+  })
 }

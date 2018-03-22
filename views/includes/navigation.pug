@@ -12,7 +12,7 @@ aside
         i.fas.fa-search
     section
       ul#streetsOverview
-        each letter, index in data
+        each letter, index in streets
           li(id=index.toLowerCase())=index
           each street, index in letter
             li

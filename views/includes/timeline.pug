@@ -1,8 +1,14 @@
 section#timeline
     main#content
+      each year, index in details
+        div(class=index)
+          each picture in year
+            img(src=picture.imgURL.value, title=picture.year.value)
     span#left
       i.fas.fa-chevron-left
     span#right
       i.fas.fa-chevron-right
     nav
       ul#heading
+        each year, index in details
+          li=index
