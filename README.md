@@ -32,6 +32,12 @@ $ npm run compile
 
 ## NPM Scripts, CommonJS & Browserify
 
+For this project, I chose to use ES6 syntax and techniques. However not every browser supports every new feature, in order to keep the support as high as possible, I chose to compile my JS files to plain and old vanilla ES5 using [Babel](https://babeljs.io/).
+
+In order to keep my project files as readable and expandable as possible, I used [Browserfy](http://browserify.org/) to combine and bundle the different JavaScript modules.
+
+Normally I use [Gulp](https://gulpjs.com/) as my primary task runner, however, for this project I had to use npm scripts. I kept it simple and wrote 2 scripts in total. The ```$ npm run compile``` script bundles the different JavaScript files and minifies the newly generated file. The ```$ npm run start``` script is used to create a localhost server based on Express. The full dependency list can be found inside the package.json file.
+
 ## Performance Optimization
 
 *All tests are performed using the "Slow 3G" option from the Google Chrome Developer Tools.*
