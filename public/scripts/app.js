@@ -1,15 +1,27 @@
 {
-  // GLOBAL VARIABLES \\
+  let searchInputField
   let sliderTimeoutHandler
   const alphabeticalFilter = document.getElementById('alphabeticalFilter')
   const leftSliderControl = document.getElementById('left')
-  const loader = document.getElementById('loader')
   const rightSliderControl = document.getElementById('right')
-  const searchInputField = document.getElementById('search')
   const streetsOverview = document.getElementById('streetsOverview')
   const timeline = document.getElementById('timeline')
 
-  // SEARCH \\
+  const createSearchForm = () => {
+    const form = document.createElement('form')
+    const input = document.createElement('input')
+    const icon = document.createElement('i')
+    input.type = 'text'
+    input.id = 'search'
+    input.placeholder = 'Search by streetname...'
+    input.addEventListener('keyup', search)
+    searchInputField = input
+    icon.classList.add('fas', 'fa-search')
+    form.appendChild(input)
+    form.appendChild(icon)
+    alphabeticalFilter.appendChild(form)
+  }
+
   const search = () => {
     const filter = searchInputField.value.toUpperCase()
     const li = streetsOverview.querySelectorAll('li')
@@ -31,7 +43,6 @@
     })
   }
 
-  // SLIDER \\
   const scroll = val => {
     sliderTimeoutHandler = setInterval(() => {
       timeline.scrollLeft < timeline.scrollWidth
@@ -40,7 +51,6 @@
     }, 0)
   }
 
-  // EVENT LISTENERS \\
   rightSliderControl.addEventListener('mouseover', () => scroll(1))
   rightSliderControl.addEventListener('mouseleave', () =>
     clearTimeout(sliderTimeoutHandler)
@@ -51,10 +61,10 @@
     clearTimeout(sliderTimeoutHandler)
   )
 
-  searchInputField.addEventListener('keyup', search)
-  window.addEventListener('load', () => loader.classList.remove('show'))
   window.addEventListener('hashchange', () => clearSearch())
   alphabeticalFilter.querySelectorAll('li').forEach(li => {
     li.addEventListener('click', () => clearSearch())
   })
+
+  createSearchForm()
 }

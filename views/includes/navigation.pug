@@ -7,9 +7,6 @@ aside
         each letter in ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
           li
             a(href=`#${letter.toLowerCase()}`)=letter
-      form
-        input(type="search", placeholder="Search by streetname...")#search
-        i.fas.fa-search
     section
       ul#streetsOverview
         each letter, index in streets
