@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile": "browserify ./public/scripts/app.js | uglifyjs > ./public/scripts/bundle.js",
+    "compile": "browserify ./public/scripts/app.js > ./public/scripts/bundle.js",
     "start": "npm run compile && node index.js"
   },
   "author": "James Peter Perrone Jefferies",
