@@ -4,17 +4,32 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "browserify ./public/scripts/app.js | uglifyjs > ./public/scripts/bundle.js",
+    "start": "npm run compile && node index.js"
   },
-  "keywords": [],
   "author": "James Peter Perrone Jefferies",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^8.0.0",
     "browserify": "^16.1.1",
     "express": "^4.16.3",
     "node-fetch": "^2.1.1",
     "pug": "^2.0.1",
-    "request": "^2.85.0"
+    "request": "^2.85.0",
+    "uglify-js": "^3.3.16"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "env"
+          ]
+        }
+      ]
+    ]
   }
 }
