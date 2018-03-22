@@ -67,4 +67,5 @@
   })
 
   createSearchForm()
+  lazyload()
 }
