@@ -30,6 +30,25 @@ $ npm run compile
 
 ## From Client-Side to Server-Side
 
+For this assignment, I had to rewrite my Amsterdams Vault repository using server-side techniques. The original version rendered the entire HTML using client-side JavaScript. There are multiple reasons why server-side rendering is a better approach. For example, faster and better performance and better overall support. Based on the short deadline I was unable to rebuild the entire web application server-side, however, my core functionalities are currently rendered server-side.
+
+**Missing features from the original repository:**
+
+* Leaflet Map displaying the currently selected street.
+* Lightbox functionality for each individual picture.
+
+**Original Repository**
+
+![](./images/client-side.png)
+
+**Server-Side Rendering**
+
+![](./images/server-side.png)
+
+I still chose to use client-side JavaScript for user experience enhancements. For example, if JavaScript is turned on, a search bar appears where users can fuzzy search every street from Amsterdam. My picture timeline also gets enhanced with some extra slider functionality, like automatically scrolling.
+
+People without JavaScript are still able to navigate through the timeline using there mouse or keyboard. While they are unable to search using the search bar they can still filter their content by each letter of the alphabet.
+
 ## NPM Scripts, CommonJS & Browserify
 
 For this project, I chose to use ES6 syntax and techniques. However not every browser supports every new feature, in order to keep the support as high as possible, I chose to compile my JS files to plain and old vanilla ES5 using [Babel](https://babeljs.io/).
@@ -40,7 +59,7 @@ Normally I use [Gulp](https://gulpjs.com/) as my primary task runner, however, f
 
 ## Performance Optimization
 
-*All tests are performed using the "Slow 3G" option from the Google Chrome Developer Tools.*
+*All tests are performed using the "Slow 3G" option from the Google Chrome Developer Tools with cache turned off.*
 
 ### Run 1: Client Side
 
