@@ -37,11 +37,11 @@ For this assignment, I had to rewrite my Amsterdams Vault repository using serve
 * Leaflet Map displaying the currently selected street.
 * Lightbox functionality for each individual picture.
 
-**Original Repository**
+**Original Repository:**
 
 ![](./images/client-side.png)
 
-**Server-Side Rendering**
+**Server-Side Rendering:**
 
 ![](./images/server-side.png)
 
