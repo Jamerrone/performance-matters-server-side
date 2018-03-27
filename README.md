@@ -108,3 +108,29 @@ Every millisecond count, even when the differences are invisible, right? Yeah...
 Enabling gZip with [Compression](https://www.npmjs.com/package/compression) was my last optimization step for this project. It resulted in an 8 seconds performance gain. On faster networks, the website renders almost immediately. Overall I am extremely happy with how this project turned out.
 
 * **Total load time:** 20.08s
+
+## Web Workers & Offline Browsing
+
+Web Workers.... Are awesome! This was my first time ever using this technology and I must say that I am extremely happy and surprised at how well it actually performed. The website got so much faster. In fact, it is so fast now that the total load time for offline pages is just over the 1-second mark. This was by far the most noticeable performance gain during this project. Other than speed, the fact that users can browse through the web without internet is game-changing.
+
+**Job Story:** When my internet fails to deliver, I want to be able to visit my previous visited pages, so I can gather the information I desire or need.
+
+*All tests, other than the offline one, where performed using the "Slow 3G" option from the Google Chrome Developer Tools. Lazy Loading was also temporarily disabled for this tests.*
+
+### Before Web Workers
+
+![Before Web Workers](./images/before-web-workers.png)
+
+* **Total load time:** 01.30m
+
+### After Web Workers
+
+![After Web Workers](./images/after-web-worker.png)
+
+* **Total load time:** 06.55s
+
+### After Web Workers (Offline)
+
+![Offline Web Workers](./images/offline-web-worker.png)
+
+* **Total load time:** 01.13s
